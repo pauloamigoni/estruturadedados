@@ -414,12 +414,13 @@ int main(){
         printf("\n\t\t\t\t   MENU");
         printf("\n\t\t==========================================");
         printf("\n\t\t 1 - Abrir pacote de figurinha");
-        printf("\n\t\t 2 - Verificar se a figurinha esta colada");
-        printf("\n\t\t 3 - Listar Figurinhas Faltantes");
-        printf("\n\t\t 4 - Listar Figurinhas Repetidas");
-        printf("\n\t\t 5 - Trocar Figurinhas Repetidas");
-        printf("\n\t\t 6 - Informacoes gerais");
-        printf("\n\t\t 7 - Sair");
+        printf("\n\t\t 2 - Inserir figurinha avulsa");
+        printf("\n\t\t 3 - Verificar se a figurinha esta colada");
+        printf("\n\t\t 4 - Listar Figurinhas Faltantes");
+        printf("\n\t\t 5 - Listar Figurinhas Repetidas");
+        printf("\n\t\t 6 - Trocar Figurinhas Repetidas");
+        printf("\n\t\t 7 - Informacoes gerais");
+        printf("\n\t\t 8 - Sair");
         printf("\n\t\t==========================================");
 
         printf("\n\t\tDigite uma opcao: ");
@@ -443,22 +444,32 @@ int main(){
 
             break;
 
+
+
             case 2:
+
+                    cout<<"Digite a a Figurinha que deseja inserir avulsa: ";
+                    cin>>vFigura;
+                      FazerOperacao(vFigura,1);
+           break;
+
+
+            case 3:
                 vFigura=0;
                 cout<<"Informe a figurinha que quer verificar: ";
                 cin>>vFigura;
                 verificaColada(vFigura);
              break;
 
-             case 3:
+             case 4:
                 verificaFalta();
              break;
 
-             case 4:
+             case 5:
                 verificaRepetidas();
              break;
 
-             case 5:
+             case 6:
                 cout<<"Informe a figurinha repetida que voce deseja trocar: ";
                 cin>>vFigura;
 
@@ -470,11 +481,11 @@ int main(){
              break;
 
 
-             case 6:
+             case 7:
                 listaAlbum();
              break;
 
-             case 7:
+             case 8:
                 printf("\n\nFinalizando...\n\n");
              break;
 
