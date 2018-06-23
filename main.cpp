@@ -314,6 +314,41 @@ void verificaRepetidas(){
 
 }
 
+
+
+/* LISTA AS FIGURINAS COLADAS */
+void verificaColadas(){
+
+
+    int novo[681];
+    FILE *arquivo;
+    int a, qtd;
+    int desc_lida = 0;
+    for(a =1; a <=681; a++){
+    arquivo = fopen("banco.txt","r");
+
+     while(!feof(arquivo)){
+        setbuf(stdin,NULL);
+        fscanf(arquivo,"%d %d\n",&desc_lida, &qtd);
+         if(desc_lida == a  && qtd == 1){
+                if(a > 0 and a <= 681){
+                cout  << desc_lida <<  "\n";
+
+                }
+            }
+         }
+
+   fclose(arquivo);
+
+       }
+
+
+}
+
+
+
+
+
 /* TROCAR A FIGURINHA, RECEBE A FIGURINHA QUE DESEJA TROCAR, E QUE VC PRECISA,
    CASO A QUE RECEBI JA TENHA COLADA NO ALBUM ENVIA PARA REPETIDAS,
    E DECREMENTADO DO REPETIDAS E COLADO NO ALBUM, SE CASO TIVER JA COLADA NO
@@ -425,11 +460,12 @@ int main(){
         printf("\n\t\t 1 - Abrir pacote de figurinha");
         printf("\n\t\t 2 - Inserir figurinha avulsa");
         printf("\n\t\t 3 - Verificar se a figurinha esta colada");
-        printf("\n\t\t 4 - Listar Figurinhas Faltantes");
-        printf("\n\t\t 5 - Listar Figurinhas Repetidas");
-        printf("\n\t\t 6 - Trocar Figurinhas Repetidas");
-        printf("\n\t\t 7 - Informacoes gerais");
-        printf("\n\t\t 8 - Sair");
+        printf("\n\t\t 4 - Listar Figurinhas Coladas");
+        printf("\n\t\t 5 - Listar Figurinhas Faltantes");
+        printf("\n\t\t 6 - Listar Figurinhas Repetidas");
+        printf("\n\t\t 7 - Trocar Figurinhas Repetidas");
+        printf("\n\t\t 8 - Informacoes gerais");
+        printf("\n\t\t 9 - Sair");
         printf("\n\t\t==========================================");
 
         printf("\n\t\tDigite uma opcao: ");
@@ -470,15 +506,22 @@ int main(){
                 verificaColada(vFigura);
              break;
 
-             case 4:
+
+            case 4:
+                verificaColadas();
+             break;
+
+
+
+             case 5:
                 verificaFalta();
              break;
 
-             case 5:
+             case 6:
                 verificaRepetidas();
              break;
 
-             case 6:
+             case 7:
                 cout<<"Informe a figurinha repetida que voce deseja trocar: ";
                 cin>>vFigura;
 
@@ -490,11 +533,11 @@ int main(){
              break;
 
 
-             case 7:
+             case 8:
                 listaAlbum();
              break;
 
-             case 8:
+             case 9:
                 printf("\n\nFinalizando...\n\n");
              break;
 
