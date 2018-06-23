@@ -21,6 +21,10 @@
 #include <vector>
 #include <typeinfo>
 
+
+
+
+
 using namespace std;
 
 
@@ -102,18 +106,19 @@ void Cadastrarpacote(int figurinha, int quantidade){
 
 /* LISTA AS INFORMAÇÕES DO ALBUM DE FIGURINHAS, QUANTAS COMPREI, QUANTAS REPETIDAS, O QUE FALTA ... */
 void listaAlbum(){
- FILE *arquivo;
+
+    FILE *arquivo;
     int a, qtd;
     int desc_lida = 0;
     int repetidas=0, faltantes=0, coladas=0, total=0;
 
 
-for(int a = 1; a <= 681; a++){
+//for(int a = 1; a <= 681; a++){
                 arquivo = fopen("banco.txt","r");
                  while(!feof(arquivo)){
                     setbuf(stdin,NULL);
                     fscanf(arquivo,"%d %d\n",&desc_lida, &qtd);
-                    if(desc_lida == a){
+                 //   if(desc_lida == a){
 
 
                             if(qtd == 0){
@@ -132,22 +137,24 @@ for(int a = 1; a <= 681; a++){
 
 
                             total = total+qtd;
-                        }
-                    }
-
-                     fclose(arquivo);
-             }
+                     //   }
 
 
+                   }
+
+  fclose(arquivo);
+
+           //  }
 
 
 
-    printf("\n\n=========================================================================\n");
-    cout << "\t" << faltantes << " figurinhas para ser completo\n";
-	cout << "\t" << coladas << " figurinhas coladas em seu album\n";
-	cout << "\t" << repetidas << " figurinhas repetidas em seu album\n";
-	cout << "\t" << total << " figurinhas compradas\n";
-	printf("=========================================================================\n");
+
+    printf("\n\n\t\t===================================\n");
+    cout << "\t\t\t" << faltantes << " faltantes\n";
+	cout << "\t\t\t" << coladas << " coladas\n";
+	cout << "\t\t\t" << repetidas << " repetidas\n";
+	cout << "\t\t\t" << total << " compradas\n";
+	printf("\t\t===================================\n");
 
 
 
@@ -390,6 +397,8 @@ void trocarFigurinha(int numero, int add){
 
 int main(){
 
+
+
  int    opcao;
 
   do{
@@ -492,7 +501,7 @@ int main(){
              default:
                 printf("\n\nOpcao invalida! Tente Novamente!\n\n");
             }
-    }while(opcao!=7);
+    }while(opcao!=9);
 
 
 
